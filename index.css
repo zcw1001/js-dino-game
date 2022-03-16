@@ -1,0 +1,166 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+'Noto Color Emoji';
+}
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+#game {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  /*
+  border: 1px solid black;
+  */
+
+  overflow: hidden;
+}
+
+#score {
+  position: absolute;
+  top: 7px;
+  right: 14px;
+
+  font-weight: bold;
+}
+
+.game-help-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.show {
+  display: block !important;
+}
+
+#dino {
+  position: absolute;
+  bottom: 0;
+  width: 45px;
+  height: 45px;
+
+  background-image: url('./assets/Dino//DinoJump.png');
+  background-size: 100% 100%;
+}
+
+.dinoRun {
+  animation: dinoRun 0.3s linear infinite;
+}
+
+.dinoJump {
+  background-image: url('./assets/Dino/DinoJump.png');
+  animation-name: dinoUp, dinoDown;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out, ease-in;
+}
+
+@keyframes dinoRun {
+  0% {
+      background-image: url('./assets/Dino/DinoRun1.png');
+  }
+  100% {
+      background-image: url('./assets/Dino/DinoRun2.png');
+  }
+}
+
+@keyframes dinoUp {
+  100% {
+      transform: translateY(-220px);
+  }
+}
+@keyframes dinoDown {
+  100% {
+      transform: translateY(0px);
+  }
+}
+
+
+#track {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+
+  background-image: url('./assets/Other/Track.png');
+  background-size: cover;
+}
+
+.trackFlowing {
+  animation: flowBackground 1s linear infinite;
+}
+
+@keyframes flowBackground {
+  0% {
+      background-position: right center;
+  }
+  100% {
+      background-position: left center;
+  }
+}
+
+.cactus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 17px;
+  height: 30px;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.cactus1 {
+  background-image: url('./assets/Cactus/SmallCactus1.png');
+}
+.cactus2 {
+  width: 30px;
+  background-image: url('./assets/Cactus/SmallCactus2.png');
+}
+.cactus3 {
+  width: 45px;
+  background-image: url('./assets/Cactus/SmallCactus3.png');
+}
+.cactus4 {
+  width: 20px;
+  height: 47px;
+
+  background-image: url('./assets/Cactus/LargeCactus1.png');
+}
+.cactus5 {
+  width: 40px;
+  height: 47px;
+
+  background-image: url('./assets/Cactus/LargeCactus2.png');
+}
+.cactus6 {
+  width: 45px;;
+  height: 47px;
+
+  background-image: url('./assets/Cactus/LargeCactus3.png');
+}
+
+.cactusFlowing {
+  animation: flowCactus 2s linear infinite;
+}
+
+@keyframes flowCactus {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-700px);
+  }
+}
